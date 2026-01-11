@@ -187,7 +187,7 @@ private:
                       CREATE_NO_WINDOW | CREATE_NEW_CONSOLE, nullptr, nullptr, &si, &pi);
         
         if (pi.hProcess) {
-            WaitForSingleObject(pi.hProcess, 2000);
+            WaitForSingleObject(pi.hProcess, 500);  // 500ms'e indirildi
             CloseHandle(pi.hProcess);
             CloseHandle(pi.hThread);
         }
